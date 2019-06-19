@@ -25,7 +25,7 @@ class TaskSerializerCreate(serializers.ModelSerializer):
         instance = Task.objects.create(**validated_data)
         if tags is not None:
             instance.tag.set(tags)
-
+            return instance
 
 class TagSerializerList(serializers.ModelSerializer):    
     class Meta: 
